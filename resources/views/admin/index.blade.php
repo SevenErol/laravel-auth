@@ -9,7 +9,7 @@
         <thead>
             <div class="row justify-content-between p-3 bg-light m-0 border-bottom border-dark align-items-center">
                 <div class="col-2"><strong>All data</strong></div>
-                <div class="col-2 text-end"><a href="/" type="button" class="btn btn-primary">Add new data</a></div>
+                <div class="col-2 text-end"><a href="{{ route('admin.project.create') }}" type="button" class="btn btn-primary">Add new data</a></div>
             </div>
             <tr class="bg-light">
                 <th scope="col">ID</th>
