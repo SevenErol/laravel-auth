@@ -29,7 +29,7 @@
                 <td>
                     <div class="d-flex flex-column">
                         <div>
-                            <a href="/" type="button" class="btn btn-secondary col-12 mb-3">View</a>
+                            <a href="{{ route ('admin.project.show', $project->id) }}" type="button" class="btn btn-secondary col-12 mb-3">View</a>
                         </div>
                         <div>
                             <a href="/" type="button" class="btn btn-primary col-12 mb-3">Edit</a>
