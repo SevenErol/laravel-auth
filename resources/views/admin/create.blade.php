@@ -9,7 +9,7 @@
 
     @include('partials.error')
 
-    <form action="/" method="post">
+    <form action="{{ route ('admin.project.store')}}" method="post">
 
         @csrf
         <div class="mb-3">
@@ -28,7 +28,7 @@
         </div>
         <div class="mb-3">
             <label for="date" class="form-label">Date</label>
-            <input type="url" class="form-control @error('date') is-invalid @enderror" id="date" name="date" value="{{old('date')}}">
+            <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date" value="{{old('date')}}">
             @error('thumb')
             <small id="dateHlper" class="text-danger">{{ $message }}</small>
             @enderror
