@@ -11,6 +11,8 @@
                 <div class="col-2"><strong>All data</strong></div>
                 <div class="col-2 text-end"><a href="{{ route('admin.project.create') }}" type="button" class="btn btn-primary">Add new data</a></div>
             </div>
+
+            @include ('partials.message')
             <tr class="bg-light">
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>

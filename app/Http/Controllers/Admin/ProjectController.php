@@ -40,15 +40,11 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $new_data = new Project();
+        $val_data = $request->validated();
 
-        $new_data->title = $request["title"];
-        $new_data->description = $request["description"];
-        $new_data->date = $request["date"];
+        Project::create($val_data);
 
-        $new_data->save();
-
-        return to_route('admin.project.index');
+        return to_route('admin.project.index')->with('message', "Project added successfully");
     }
 
     /**
@@ -82,15 +78,12 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $data = [
-            'title' => $request['title'],
-            'description' => $request['description'],
-            'date' => $request['date']
-        ];
 
-        $project->update($data);
+        $val_data = $request->validated();
 
-        return to_route('admin.project.index');
+        $project->update($val_data);
+
+        return to_route('admin.project.index')->with('message', "Project updated successfully");
     }
 
     /**
