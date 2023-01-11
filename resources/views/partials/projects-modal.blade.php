@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Stai per eliminare per sempre un elemento, se sicuro di voler continuare? Se lo fai non sarà più possibile recuperare i dati
+                Stai per eliminare per sempre un elemento, sei sicuro di voler continuare? Se lo fai, non sarà più possibile recuperare i dati.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
