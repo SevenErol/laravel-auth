@@ -22,12 +22,21 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label for="cover_image" class="form-label">Data cover image</label>
-            <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{ $project->cover_image }}">
-            @error('cover_image')
-            <small id="cover_imageHlper" class="text-danger">{{ $message }}</small>
-            @enderror
+        <div class="mb-3 d-flex">
+            <div class="col-2">
+                @if($project->cover_image)
+                <img width="140" class="img-fluid" src="{{asset('storage/' . $project->cover_image)}}" alt="">
+                @else
+                <div class="placeholder p-5 bg-secondary d-flex align-items-center justify-content-center" style="width:140px">Placeholder</div>
+                @endif
+            </div>
+            <div class="col-10">
+                <label for="cover_image" class="form-label">Data cover image</label>
+                <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{ $project->cover_image }}">
+                @error('cover_image')
+                <small id="cover_imageHlper" class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
         </div>
 
         <div class="mb-3">
