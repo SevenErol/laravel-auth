@@ -9,7 +9,7 @@
 
     @include('partials.error')
 
-    <form action="{{ route ('admin.project.store')}}" method="post">
+    <form action="{{ route ('admin.project.store')}}" method="post" enctype="multipart/form-data">
 
         @csrf
         <div class="mb-3">
@@ -19,6 +19,15 @@
             <small id="titleHlper" class="text-danger">{{ $message }}</small>
             @enderror
         </div>
+
+        <div class="mb-3">
+            <label for="cover_image" class="form-label">Data cover image</label>
+            <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{old('cover_image')}}">
+            @error('cover_image')
+            <small id="cover_imageHlper" class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+
         <div class="mb-3">
             <label for="description">Data description</label>
             <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Leave a description" id="description" name="description" style="height: 150px">{{old('description')}}</textarea>
