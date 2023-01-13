@@ -15,6 +15,7 @@
             @include ('partials.message')
             <tr class="bg-light">
                 <th scope="col">ID</th>
+                <th scope="col">Cover image</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Date</th>
@@ -25,6 +26,13 @@
             @foreach ($projects as $project)
             <tr>
                 <th scope="row">{{ $project['id']}}</th>
+                <td>
+                    @if($project->cover_image)
+                    <img width="140" class="img-fluid" src="{{asset('storage/' . $post->cover_image)}}" alt="">
+                    @else
+                    <div class="placeholder p-5 bg-secondary d-flex align-items-center justify-content-center" style="width:140px">Placeholder</div>
+                    @endif
+                </td>
                 <td>{{ $project['title'] }}</td>
                 <td>{{ $project['description'] }}</td>
                 <td>{{ $project['date']}}</td>
